@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+<title>tmux - hoge0.xyz</title>
+</head>
+
+
+<body>
+<h1>tmux</h1>
+<h2>
+FreeBSD では、コピーモードが動かない<br>
+GNOME 端末で、マウスで選択したり、Ctrl を押しながら選択したりして代用<br>
+</h2>
+<h2>設定ファイル</h2>
+<p>~/.tmux.conf</p>
+<h2>設定 そのまえに</h2>
+<p>
+set-option の省略形が set<br>
+set-window-option の省略形が setw<br>
+bind-key の省略形が bind
+</p>
+<h2>prefix key を Ctrl+V にする</h2>
+<p>set -g prefix C-v</p>
+<h2>vi での Esc の効きを快適に</h2>
+<p>set -s escape-time 0</p>
+<h2>コピーモードの動作を vi 風に</h2>
+<p>setw -g mode-keys vi</p>
+<h2>色の設定</h2>
+<p>
+set-option -g default-terminal screen-256color<br>
+set -g terminal-overrides 'xterm:colors=256'
+</p>
+<p>
+<a href="https://qiita.com/nmrmsys/items/03f97f5eabec18a3a18b">tmux cheat sheet</a>
+</p>
+</body>
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+<title>screen - hoge0.xyz</title>
+</head>
+
+
+<body>
+<h1>screen</h1>
+<h2>FreeBSD では Vim がズレる</h2>
+<h2>設定ファイル</h2>
+<p>
+~/.screenrc<br>
+<br>
+反映させるには [Escape Key] : と打ってコマンド入力状態にしてから<br>
+:source ~/.screenrc
+</p>
+<h2>文字コード</h2>
+<p>
+defutf8 on<br>
+defencoding utf8<br>
+encoding utf8 utf8
+</p>
+<h2>escape key setting</h2>
+<p>
+escape ^Vv<br>
+<br>
+エスケープキーを Ctrl+V にする (^V の部分)<br>
+Ctrl+V そのものを入力したいときは、Ctrl+V v と打つ (2文字目 の v の部分)
+</p>
+<h2>表示の改善</h2>
+<p>altscreen on</p>
+</body>
+
+
+</html>
