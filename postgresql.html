@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+<title>PostgreSQL</title>
+</head>
+
+
+<body>
+<p><a href="./">INDEX</a></p>
+
+<h1>PostgreSQL</h1>
+
+<h2>とりあえず UNIX 上のユーザ hoge から PostgreSQL にログインできるようにする</h2>
+
+<p>
+ロールを作成
+</p>
+<p>CREATE ROLE hoge WITH SUPERUSER LOGIN PASSWORD 'qwerty';</p>
+
+<p>
+データベースを作成
+</p>
+<p>CREATE DATABASE hoge;</p>
+
+<p>
+PostgreSQL を抜ける
+</p>
+<p>\q</p>
+
+<p>
+UNIX ユーザ hoge のシェルから PostgreSQL にログイン
+</p>
+<p>$ psql</p>
+
+<h2>他</h2>
+
+<p>
+PostgreSQL を抜ける
+</p>
+<p>\q</p>
+
+<p>
+ロールの一覧を表示
+</p>
+<p>SELECT rolname FROM pg_roles;</p>
+
+<p>
+ロールの一覧を表示
+</p>
+<p>\du</p>
+
+<p>
+ロールを作成
+</p>
+<p>CREATE ROLE hoge WITH SUPERUSER LOGIN PASSWORD 'qwerty';</p>
+
+<p>
+ロールを削除<br>
+(削除したいロールに依存したオブジェクトをすべて削除してからおこなう)
+</p>
+<p>DROP ROLE hoge;</p>
+
+<p>
+データベースの一覧を表示
+</p>
+<p>\l</p>
+
+<p>
+データベースの作成
+</p>
+<p>CREATE DATABASE hoge;</p>
+</body>
+
+<p>
+データベースの削除
+</p>
+<p>DROP DATABASE hoge;</p>
+
+<p>
+テーブルの一覧を表示
+</p>
+<p>\d</p>
+
+<p>
+テーブルの定義の表示
+</p>
+<p>\d hoge</p>
+</html>

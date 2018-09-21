@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+<title>ZFS of FreeBSD</title>
+</head>
+
+
+<body>
+<p><a href="./">INDEX</a></p>
+
+<h1>ZFS of FreeBSD</h1>
+
+<p>
+FreeBSD は、GEOM (GEOMetry) によってパーティションを管理している?<br>
+ので、パーティションの状況を見るには、つぎのコマンドを使う
+</p>
+<p>$ gpart show</p>
+
+<p>
+ZFS ストレージプールの状況を出力する
+</p>
+<p>$ zpool list</p>
+
+<p>
+ZFS ファイルシステムの状況を出力する
+</p>
+<p>$ zfs list</p>
+
+<p>
+ZFS ファイルシステムを作成する
+</p>
+<p>$ sudo zfs create -o mountpoint=/usr/home/hoge zroot/usr/home/hoge</p>
+
+<p>
+ZFS ファイルシステムのクオータを 1GB に設定する
+</p>
+<p>$ sudo zfs set quota=1G zroot/usr/home/hoge</p>
+
+<p>
+ZFS ファイルシステムを削除する
+</p>
+<p>$ sudo zfs destroy zroot/usr/home/hoge</p>
+</body>
+
+
+</html>
