@@ -12,34 +12,67 @@
 
 <body>
 <h1>Vim</h1>
+
 <h2>設定ファイル</h2>
 <p>~/.vim/vimrc</p>
-<h2>特殊キーの指定方法</h2>
+
+<h2>現在のオプションの確認方法</h2>
+<p>:set</p>
+
+<h2>特殊キーの指定方法 (大文字小文字は問わない)</h2>
 <p>
-Ctrl+x: &lt;C-x&gt;<br>
-Esc: &lt;Esc&gt;
+Ctrl+X: &lt;c-x&gt;<br>
+Esc: &lt;esc&gt;<br>
+Up: &lt;up&gt;<br>
+Down: &lt;down&gt;<br>
+Left: &lt;left&gt;<br>
+Down: &lt;down&gt;<br>
+Space: &lt;space&gt;<br>
+Enter: &lt;lf&gt; または &lt;cr&gt; (&lt;cr&gt; でも入力されたのは LF だった (環境依存 (?)))
+</p>
+
+<h2>filetype</h2>
 <p>
+<a href="http://d.hatena.ne.jp/wiredool/20120618/1340019962">http://d.hatena.ne.jp/wiredool/20120618/1340019962</a><br>
+<a href="https://wonderwall.hatenablog.com/entry/2016/03/20/222308">https://wonderwall.hatenablog.com/entry/2016/03/20/222308</a><br>
+<a href="https://qiita.com/mitsuru793/items/2d464f30bd091f5d0fef">https://qiita.com/mitsuru793/items/2d464f30bd091f5d0fef</a>
+</p>
+
 <h2>augroup</h2>
 <p><a href="https://qiita.com/s_of_p/items/b61e4c3a0c7ee279848a">augroup</a></p>
-<h2>set と setlocal (要検証)</h2>
-<h3>set</h3>
-<p>
-1. File A を編集 (indent 4columns)<br>
-2. File B を編集<br>
-3. set でインデントを 2columns にする<br>
-4. File A も 2columns になってしまうはず
-<h3>setlocal</h3>
-1. File A を編集 (indent 4columns)<br>
-2. File B を編集<br>
-3. setlocal でインデントを 2columns にする<br>
-4. File A は 4columns のまま
+<h2>set と setlocal</h2>
+<p><a href="https://qiita.com/mitsuru793/items/2d464f30bd091f5d0fef#vim%E3%81%AE%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3">https://qiita.com/mitsuru793/items/2d464f30bd091f5d0fef#vim%E3%81%AE%E3%82%A4%E3%83%B3%E3%83%87%E3%83%B3%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3</a></p>
 <h3>ようするに</h3>
 <p>
 Vim 全体の設定を変更するか<br>
 編集中のファイル (buffer) だけ変更するか、のちがい
 </p>
-<h3>参考サイト</h3>
-<p><a href=""></a></p>
+
+<h2>indent</h2>
+<p>
+<a href="https://vim-jp.org/vimdoc-ja/indent.html">https://vim-jp.org/vimdoc-ja/indent.html</a>
+</p>
+<p>
+HTML のタグのあとの indent を無効にする<br>
+~/.vim/ftplugin/html.vim に<br>
+let g:html_indent_autotags = "html,head,body"<br>
+ほかのタグも必要なら、追加する
+</p>
+
+<h2>Vim script の関数の例</h2>
+<pre>
+function! HelloWithName(name)
+        echo "hello, " . a:name
+endfunction
+
+command! -nargs=* HelloWithName call HelloWithName(&lt;f-args&gt;)
+</pre>
+
+<h2>小ネタ</h2>
+<p>
+Vim では保存時、ファイル末尾に対し LF が自動的に付加される<br>
+すでにファイル末尾が LF になっていても、さらに付加される
+</p>
 </body>
 
 
