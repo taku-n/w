@@ -14,6 +14,32 @@
 <h1>Vim</h1>
 <h2>設定ファイル</h2>
 <p>~/.vim/vimrc</p>
+<h2>特殊キーの指定方法</h2>
+<p>
+Ctrl+x: &lt;C-x&gt;<br>
+Esc: &lt;Esc&gt;
+<p>
+<h2>augroup</h2>
+<p><a href="https://qiita.com/s_of_p/items/b61e4c3a0c7ee279848a">augroup</a></p>
+<h2>set と setlocal (要検証)</h2>
+<h3>set</h3>
+<p>
+1. File A を編集 (indent 4columns)<br>
+2. File B を編集<br>
+3. set でインデントを 2columns にする<br>
+4. File A も 2columns になってしまうはず
+<h3>setlocal</h3>
+1. File A を編集 (indent 4columns)<br>
+2. File B を編集<br>
+3. setlocal でインデントを 2columns にする<br>
+4. File A は 2columns のまま
+<h3>ようするに</h3>
+<p>
+Vim 全体の設定を変更するか<br>
+編集中のファイル (buffer) だけ変更するか、のちがい
+</p>
+<h3>参考サイト</h3>
+<p><a href=""></a></p>
 </body>
 
 
