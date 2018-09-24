@@ -43,6 +43,13 @@ host tripe を x86_64-pc-windows-gnu にする<br>
 <p>$ rustup update</p>
 
 <h2>DLL を生成</h2>
+<h3>Cargo</h3>
+<h4>おてがるにはいかない</h4>
+<p>
+$ cargo build --crate-type dylib<br>
+エラー
+</p>
+<h4>めんどう</h4>
 <p>
 $ cargo new projectname --lib<br>
 <br>
@@ -61,11 +68,18 @@ pub extern fn funcname() {}<br>
 <br>
 のかたち
 </p>
+<h3>rustc</h3>
+<p>
+$ rustc --crate-type dylib source.rs<br>
+または<br>
+$ rustc --crate-type=dylib source.rs
+</p>
 
 <h2>target triple の指定の仕方</h2>
-<h3>おてがる</h3>
+<h3>Cargo</h3>
+<h4>おてがる</h4>
 <p>$ cargo build --target custom-target-triple</p>
-<h3>めんどう</h3>
+<h4>めんどう</h4>
 <p>
 プロジェクトのルートに .cargo ディレクトリを作成<br>
 中に config ファイルを作成し<br>
@@ -74,6 +88,12 @@ pub extern fn funcname() {}<br>
 target = "custom-target-triple"<br>
 <br>
 とする
+</p>
+<h3>rustc</h3>
+<p>
+rustc --target custom-target-triple hoge.rs<br>
+または<br>
+rustc --target=custom-target-triple hoge.rs
 </p>
 </body>
 
