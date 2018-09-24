@@ -13,7 +13,22 @@
 <body>
 <h1>rustlang</h1>
 <h2>host triple</h2>
+<p>$ rustup target list</p>
 <p><a href="https://www.rust-lang.org/ja-JP/other-installers.html">list</a></p>
+<p>
+追加したいとき<br>
+$ rustup target add x86_64-pc-windows-gnu
+</p>
+<p>
+MSYS2 on Windows 10 では<br>
+x86_64-pc-windows-gnu<br>
+i686-pc-windows-gnu
+</p>
+<p>
+WebAssembly では<br>
+wasm32-unknown-unknown
+</p>
+
 <h2>MSYS2 でのインストール</h2>
 <p>
 MINGW64 で開いて<br>
@@ -23,8 +38,43 @@ host tripe を x86_64-pc-windows-gnu にする<br>
 つぎの PATH を追加<br>
 /c/Users/your-user-account-name/.cargo/bin
 </p>
+
 <h2>update</h2>
 <p>$ rustup update</p>
+
+<h2>DLL を生成</h2>
+<p>
+$ cargo new projectname --lib<br>
+<br>
+Cargo.toml に<br>
+<br>
+[lib]<br>
+name = "projectname"<br>
+crate-type = ["dylib"]<br>
+<br>
+を追記<br>
+<br>
+関数は<br>
+<br>
+#[no_mangle]<br>
+pub extern fn funcname() {}<br>
+<br>
+のかたち
+</p>
+
+<h2>target triple の指定の仕方</h2>
+<h3>おてがる</h3>
+<p>$ cargo build --target custom-target-triple</p>
+<h3>めんどう</h3>
+<p>
+プロジェクトのルートに .cargo ディレクトリを作成<br>
+中に config ファイルを作成し<br>
+<br>
+[build]<br>
+target = "custom-target-triple"<br>
+<br>
+とする
+</p>
 </body>
 
 
