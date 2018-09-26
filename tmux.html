@@ -37,11 +37,23 @@ bind-key の省略形が bind
 </p>
 <h2>コピーモードの注意点</h2>
 <p>タブをコピーすると、コピー先ではスペースになってしまう</p>
+
 <h2>色の設定</h2>
 <p>
 set-option -g default-terminal screen-256color<br>
 set -g terminal-overrides 'xterm:colors=256'
 </p>
+
+<h2>hjkl でウインドウの移動</h2>
+<p>
+bind-key h select-pane -L<br>
+bind-key j select-pane -D<br>
+bind-key k select-pane -U<br>
+bind-key l select-pane -R
+</p>
+<p><a href="https://mynavi-agent.jp/it/geekroid/2017/03/-11tmux.html">参考</a></p>
+
+<h2>Cheat Sheet</h2>
 <p>
 <a href="https://qiita.com/nmrmsys/items/03f97f5eabec18a3a18b">tmux cheat sheet</a>
 </p>
