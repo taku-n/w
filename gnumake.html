@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+<title>GNU make</title>
+</head>
+
+
+<body>
+<h1>GNU make</h1>
+
+<h2>ターゲットの記述の順番について</h2>
+<p>最終生成物を最初に記述しなければならない</p>
+<p>つまり hoge が最終生成物ならば</p>
+<pre>
+hoge: fuga
+	command
+
+fuga:
+	command
+</pre>
+<p>としなければならない</p>
+<pre>
+fuga:
+	command
+
+hoge: fuga
+	command
+</pre>
+<p>とすると、fuga を生成した時点で止まってしまう</p>
+</body>
+
+
+</html>
